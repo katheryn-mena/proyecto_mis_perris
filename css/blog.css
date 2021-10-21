@@ -1,0 +1,22 @@
+#blog .contenedor img {
+    width: 250px;
+    height: 200px;
+    border: solid 4px pink;
+    border-radius: 8px;
+}
+
+#blog {
+    font-family: monospace;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#blog .contenedor {
+    display: flex; /* definición de cajas de tipo flexbox */
+    justify-content: center; /* justificación centrada a todos los elementos */
+    flex-wrap: wrap;  /* define el uso de multi-línea si no tiene cupo */
+}
+
+#blog .contenedor article {
+    margin: 15px;
+}

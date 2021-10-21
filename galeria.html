@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Perris</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="dist/css/lightbox.css">
+</head>
+
+<body>
+    <!-- cabecera de la página web -->
+    <header>
+        <!-- capa que contiene los elementos de la cabecera -->
+        <div class="contenedor">
+            <h1 class="icon-guidedog">Mis Perris</h1>
+            <!-- permite activar el menú lateral (móvil) -->
+            <input type="checkbox" name="" id="menu-bar">
+            <label class="icon-credit-card" for="menu-bar"></label>
+            <!-- barra de navegación del menú -->
+            <nav class="menu">
+                <a href="index.html">Inicio</a>
+                <a href="galeria.html">Galería</a>
+                <a href="formulario.html">Formulario</a>
+                <a href="">Quiénes Somos</a>
+            </nav>
+        </div>
+    </header>
+    <!-- sector principal de la página -->
+    <main>
+        <!-- secciones de contenido -->
+        <section id="banner">
+            <img src="img/perro1.jpeg" alt="">
+            <div class="contenedor">
+                <h2>Mascotas Felices en Mis Perris</h2>
+                <p>¿Cuál es la mejor mascota para usted?</p>
+                <a href="">Leer Más</a>
+            </div>
+        </section>
+        <section id="bienvenida">
+            <h2>Galería de mascotas para la venta</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum totam quo illo nostrum labore nihil
+                veritatis laborum est, et, facere quod id voluptate fugit ipsa pariatur necessitatibus ipsam
+                voluptatibus sequi?</p>
+        </section>
+        <section id="blog">
+            <h3>Lo último de nuestro stock</h3>
+            <input type="button" value="Recuperar Dolar" onclick="recupera()">
+            <div id="valor_dolar">
+            <script>
+                function recupera(){
+                    fetch("https://mindicador.cl/api/dolar").then(
+                        function(response) {
+                            if (response.status!=200) {
+                                alert("Problemas de conexión con el servidor");
+                                return;
+                            }
+                            console.log('Estado de la respuesta: ' +response.status);
+                            response.json().then(
+                                function(data) {
+                                    console.log(data);
+                                    var dolar = data.serie[0].valor;
+                                    //alert('Valor del dolar:' +dolar);
+                                    document.getElementById('valor_dolar').innerHTML=dolar;
+                                }
+                            );
+                        }
+                    );
+                }
+            </script>
+            </div>
+            <div class="contenedor">
+                <article>
+                    <a href="img/perro1.jpeg" data-lightbox="perros" data-title="Linda">
+                        <img src="img/perro1.jpeg" alt="">
+                    </a>
+                    <h4>Linda</h4>
+                    <h5>Dolar: $30</h5>
+                </article>
+                <article>
+                    <a href="img/perro2.jpeg" data-lightbox="perros" data-title="Hatchi">
+                        <img src="img/perro2.jpeg" alt="">
+                    </a>
+                    <h4>Hatchi</h4>
+                    <h5>Dolar: $50</h5>
+                </article>
+                <article>
+                    <a href="img/perro3.jpeg" data-lightbox="perros" data-title="Jack">
+                        <img src="img/perro3.jpeg" alt="">
+                    </a>
+                    <h4>Jack</h4>
+                    <h5>Dolar: $25</h5>
+                </article>
+                <article>
+                    <a href="img/perro4.jpeg" data-lightbox="perros" data-title="Greyson">
+                        <img src="img/perro4.jpeg" alt="">
+                    </a>
+                    <h4>Greyson</h4>
+                    <h5>Dolar: $30</h5>
+                </article>
+                <article>
+                    <a href="img/perro5.jpeg" data-lightbox="perros" data-title="Negri">
+                        <img src="img/perro5.jpeg" alt="">
+                    </a>
+                    <h4>Negri</h4>
+                    <h5>Dolar: $25</h5>
+                </article>
+                <article>
+                    <a href="img/perro6.jpeg" data-lightbox="perros" data-title="Marli">
+                        <img src="img/perro6.jpeg" alt="">
+                    </a>
+                    <h4>Marli</h4>
+                    <h5>Dolar: $40</h5>
+                </article>
+                <article>
+                    <a href="img/perro7.jpeg" data-lightbox="perros" data-title="Pili">
+                        <img src="img/perro7.jpeg" alt="">
+                    </a>
+                    <h4>Pili</h4>
+                    <h5>Dolar: $30</h5>
+                </article>
+                <article>
+                    <a href="img/perro8.jpeg" data-lightbox="perros" data-title="Bobi">
+                        <img src="img/perro8.jpeg" alt="">
+                    </a>
+                    <h4>Bobi</h4>
+                    <h5>Dolar: $25</h5>
+                </article>
+            </div>
+        </section>
+    </main>
+<script src="dist/js/lightbox-plus-jquery.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Perris</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- cabecera de la página web -->
+    <header>
+        <!-- capa que contiene los elementos de la cabecera -->
+        <div class="contenedor">
+            <h1 class="icon-guidedog">Mis Perris</h1>
+            <!-- permite activar el menú lateral (móvil) -->
+            <input type="checkbox" name="" id="menu-bar">
+            <label class="icon-credit-card" for="menu-bar"></label>
+            <!-- barra de navegación del menú -->
+            <nav class="menu">
+                <a href="index.html">Inicio</a>
+                <a href="galeria.html">Galería</a>
+                <a href="formulario.html">Formulario</a>
+                <a href="">Quiénes Somos</a>
+            </nav>
+        </div>
+    </header>
+    <!-- sector principal de la página -->
+    <main>
+        <!-- secciones de contenido -->
+        <section id="banner">
+            <img src="img/perro1.jpeg" alt="">
+            <div class="contenedor">
+                <h2>Mascotas Felices en Mis Perris</h2>
+                <p>¿Cuál es la mejor mascota para usted?</p>
+                <a href="">Leer Más</a>
+            </div>
+        </section>
+        <section id="bienvenida">
+            <h2>Formulario de inscripción de adopción de mascotas</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum totam quo illo nostrum labore nihil
+                veritatis laborum est, et, facere quod id voluptate fugit ipsa pariatur necessitatibus ipsam
+                voluptatibus sequi?</p>
+        </section>
+        <section id="formulario">
+            
+            <form class="form-registro" action="" method="post" onsubmit="return validarFormulario()">
+                
+                <h2 class="form-titulo">Crear cuenta de usuario</h2>
+                
+                <div class="contenedor-input">
+                    <input class="col-sm" type="text" name="txtNombre" id="txtNombre" placeholder="Ingrese nombre" required minlength="3" pattern="[A-Za-z ]{3,45}" title="solo letras entre 3 a 45 caracteres">
+                    <input class="col-sm" type="text" name="txtApellido" id="txtApellido" placeholder="Ingrese apellido" required minlength="3" pattern="[A-Za-z]{3,45}">
+                    <input class="col-sm" type="text" name="txtRut" id="txtRut" placeholder="Ingrese rut ej. 12345678-9" required minlength="9" maxlength="10">
+                    <input class="col-sm" type="date" name="txtFechaNaci" id="txtFechaNaci" required>
+                    <input class="col-xl" type="email" name="txtEmail" id="txtEmail" placeholder="Ingrese email" required>
+                    <input class="col-sm" type="text" name="txtUsuario" id="txtUsuario" placeholder="Ingrese usuario" required minlength="3" maxlength="10">
+                    <input class="col-sm" type="password" name="txtPass" id="txtPass" placeholder="Ingrese contraseña" required minlength="8" maxlength="12">
+                    <input class="col-xl" type="text" name="txtFono" id="txtFono" placeholder="Ingrese teléfono" required minlength="8" pattern="[0-9]{8,9}" title="ingrese un teléfono de casa ej. 212121212">
+
+                    <input class="btn-registrar" type="submit" value="Registrar">
+                    <input class="btn-registrar" type="reset" value="Limpiar">
+                    <input class="btn-registrar" type="button" value="Accion" id="btnAccion">
+                </div>
+            </form>
+        </section>
+
+        <script src="js/scripts.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $("#btnAccion").click(function() {
+                    var rut = $("·txtRut").val();
+                    alert('pincho un botón, su rut es: '+rut);
+                })
+            });
+        </script>
+
+    </main>
+</body>
+
+</html>

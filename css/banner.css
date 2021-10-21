@@ -1,0 +1,28 @@
+#banner img {
+    width: 100%;
+}
+
+#banner .contenedor {
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    font-family: monospace;
+    color: white;
+    width: 85%;
+}
+
+#banner .contenedor a {
+    display: block;
+    border: solid 4px pink;
+    width: 100px;
+    margin-top: 15px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+#banner .contenedor a:hover {
+    background: white;
+    color: pink;
+}
